@@ -56,4 +56,3 @@ static Contador *_instance = nil;
 
 
 @end
-
