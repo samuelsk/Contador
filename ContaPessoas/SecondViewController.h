@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Contador.h"
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <ContadorDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *totalBoys;
 @property (weak, nonatomic) IBOutlet UILabel *totalGirls;
@@ -16,3 +17,4 @@
 - (IBAction)click:(id)sender;
 
 @end
+

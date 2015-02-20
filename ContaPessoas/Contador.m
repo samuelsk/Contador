@@ -15,6 +15,8 @@
     int girl;
 }
 
+@synthesize delegate;
+
 static Contador *_instance = nil;
 
 -(id)init {
@@ -34,11 +36,14 @@ static Contador *_instance = nil;
     return _instance;
 }
 
+//Quando um dos métodos abaixo é chamado pela FirstViewController, o delegate envia um comando de atualização para a SecondViewController.
 - (void)maisUmCueca {
     boy = boy + 1;
+    [delegate atualizarContador];
 }
 - (void)maisUmaGata {
     girl++;
+    [delegate atualizarContador];
 }
 
 -(int)getBoys {
@@ -56,3 +61,4 @@ static Contador *_instance = nil;
 
 
 @end
+

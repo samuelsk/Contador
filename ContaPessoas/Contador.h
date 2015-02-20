@@ -6,7 +6,17 @@
 //  Copyright (c) 2015 Vinicius Miana. All rights reserved.
 //
 
-@interface Contador : NSObject 
+@class Contador; //Declara uma classe para que o protocolo possa enxergá-la.
+
+@protocol ContadorDelegate <NSObject>
+
+- (void)atualizarContador; //Método que deve ser aderido por todas as classes que implementam este protocolo.
+
+@end
+
+@interface Contador : NSObject
+
+@property (nonatomic, weak) id <ContadorDelegate> delegate; //Declara ContadorDelegate como um delegate.
 
 - (void)maisUmCueca;
 - (void)maisUmaGata;
@@ -17,3 +27,4 @@
 -(int)getTotal;
 
 @end
+
